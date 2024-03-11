@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru 2</title>
+    <style>
+        input[type="number"] {
+            width: 50px;
+            margin-right: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Sayısal Loto Oyunu</h3>
+    Aşağıdaki inputlara tahminlerini giriniz;<br><br>
+    <div id="guessArea">
+        <input type="number" min="1" max="49">
+        <input type="number" min="1" max="49">
+        <input type="number" min="1" max="49">
+        <input type="number" min="1" max="49">
+        <input type="number" min="1" max="49">
+        <input type="number" min="1" max="49">
+        <button id="submitGuess">Tahmin Gir</button>
+        <br><br>
+        <span id="guessResult"></span>
+    </div>
+    <hr>
+    <div id="resultArea">
+        <button disabled id="drawLottery">Kurayı Çek</button><br><br>
+        Loto Sayıları<br><br>
+        <input type="number" readonly>
+        <input type="number" readonly>
+        <input type="number" readonly>
+        <input type="number" readonly>
+        <input type="number" readonly>
+        <input type="number" readonly>
+        <br><br>
+        <span id="matchArea"></span>
+
+    </div>
+
+    <script>
+        const submitGuessButton = document.getElementById('submitGuess');
+        const drawLotteryButton = document.getElementById('drawLottery');
+        const guessInputs = document.getElementById('guessArea').querySelectorAll('input[type="number"]');
+        const lotteryInputs = document.getElementById('resultArea').querySelectorAll('input[type="number"]');
+        const matchArea = document.getElementById('matchArea');
+        const guessArea = document.getElementById("guessArea");
+        const guessResult = document.getElementById("guessResult");
+
+        guessInputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                const values = Array.from(guessInputs).map(i => i.value.trim()).filter(v => v !== '');
+
+                if (new Set(values).size !== values.length) {
+                    alert("Aynı tahmin bir kez girilebilir.");
+                    input.value = '';
+                    input.focus();
+                } else if (input.value) { // Sadece input değeri varsa kontrol et
+                    const numValue = parseFloat(input.value); // Değeri float bir sayıya dönüştür
+                    if (!Number.isInteger(numValue) || numValue < 1 || numValue > 49) {
+                        alert("Lütfen 1-49 sayıları arasında bir tam sayı giriniz.");
+                        input.value = ''; // Hatalı girişi temizle
+                        input.focus();
+                    }
+                }
+            });
+        });
+
+
+        submitGuessButton.addEventListener('click', () => {
+            const guesses = Array.from(guessInputs).map(input => parseInt(input.value)).filter(n => !isNaN(n));
+            if (guesses.length === 6 && new Set(guesses).size === 6) {
+                guesses.sort((a, b) => a - b);
+                guesses.forEach((guess, index) => {
+                    guessInputs[index].value = guess;
+                    guessInputs[index].readOnly = true;
+                });
+                submitGuessButton.disabled = true;
+                drawLotteryButton.disabled = false;
+                guessResult.innerText = "Tahminler girildi.";
+
+            } else {
+                alert("Lütfen 6 farklı tahmin giriniz.");
+            }
+        });
+
+        drawLotteryButton.addEventListener('click', () => {
+            let lotteryNumbers = [];
+            while (lotteryNumbers.length < 6) {
+                const num = Math.floor(Math.random() * 49) + 1;
+                if (!lotteryNumbers.includes(num)) {
+                    lotteryNumbers.push(num);
+                }
+            }
+            lotteryNumbers.sort((a, b) => a - b);
+            lotteryNumbers.forEach((num, index) => {
+                lotteryInputs[index].value = num;
+            });
+
+            const matches = lotteryNumbers.filter(num =>
+                Array.from(guessInputs).map(input => parseInt(input.value)).includes(num)
+            );
+            matchArea.innerHTML = `Bilinen sayılar: ${matches.join(', ')} <br> ${matches.length} adet sayı bildiniz. `;
+
+
+        });
+    </script>
+</body>
+
+</html>
