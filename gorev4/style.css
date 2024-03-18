@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+body {
+  background-color: red;
+  display: grid;
+  place-items: center;
+}
+.container {
+  background-color: white;
+  min-width: 1800px;
+  min-height: 940px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+/* sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 150px;
+  height: 100%;
+  text-align: center;
+  border-right: 1px solid #b3b1b1;
+}
+.sidebar .top {
+  display: inline-block;
+  width: 100%;
+  padding: 50px 30px;
+}
+.sidebar .top {
+  font-size: 33px;
+  border-bottom: 1px solid #b3b1b1;
+}
+.sidebar .middle {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .middle .link {
+  font-size: 27px;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 7px;
+  transition: 400ms all;
+}
+
+.sidebar .middle .link:hover {
+  background-color: #b2dbe4;
+}
+.sidebar .bottom {
+  margin-top: auto;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .bottom .link {
+  font-size: 35px;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* main */
+.main {
+  height: 100%;
+  min-width: 1350px;
+  width: 100%;
+  background-color: #f7f6f9;
+  padding: 50px 110px;
+  display: flex;
+  flex-direction: column;
+}
+.main .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.main .top .bars {
+  font-size: 25px;
+}
+.main .top .bars .fa-bars {
+  color: gray;
+  margin-left: 15px;
+}
+.main .top .button {
+  background-color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.main .top .button span {
+  margin-right: 5px;
+}
+.main .middle {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  gap: 40px;
+}
+.main .middle .social {
+  width: 25%;
+  border: 8px solid white;
+  border-radius: 20px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  transition: 400ms all;
+}
+.main .middle .social:hover{
+  background-color: white;
+}
+.main .middle .social .fa-twitter {
+  color: #1da1f2;
+}
+.main .middle .social .fa-instagram {
+  color: #405de6;
+}
+.main .middle .social .fa-youtube {
+  color: #ff0000;
+}
+.main .middle .social .fa-facebook-f {
+  color: #4267b2;
+}
+.main .middle .social.active {
+  background-color: white;
+}
+.main .middle .social .icon {
+  font-size: 45px;
+}
+.main .middle .social .info {
+  display: inline-flex;
+  flex-direction: column;
+  color: #a5a5a5;
+}
+.main .middle .social .info span {
+  color: black;
+  margin: 10px 0;
+  font-size: 30px;
+}
+.main .middle .social .social-menu {
+  width: 100%;
+  text-align: right;
+}
+.main .middle .social .social-menu .fa-ellipsis {
+  font-size: 30px;
+}
+
+.main .graph {
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 40px 30px 40px;
+}
+.main .graph .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+.main .graph .title .info {
+  display: inline-flex;
+  gap: 15px;
+}
+.main .graph .title div {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .graph .title .info i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.main .graph .title .info .gained i {
+  background-color: orange;
+}
+.main .graph .title .info .lost i {
+  background-color: brown;
+}
+.main .bottom{
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+.main .bottom .metrics{
+  width: 50%;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+}
+.main .bottom .metrics .title{
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.main .bottom .metrics .data{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.main .bottom .metrics .data .line {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d5d5d5;
+}
+.main .bottom .statistics{
+  color: white;
+  font-size: 22px;
+  width: 25%;
+  padding: 30px;
+  background-color: purple;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .bottom .statistics .value{
+  font-size: 40px;
+}
+.main .bottom .statistics span {
+  font-size: 20px;
+}
+.main .bottom .statistics span i{
+  margin-right: 5px;
+}
+.main .bottom .statistics span .fa-angles-up{
+  color: #559381;
+}
+.main .bottom .statistics span .fa-angles-down{
+  color: #c87185;
+}
+.rightbar {
+  height: 100%;
+  min-width: 420px;
+  padding: 40px;
+}
+.rightbar .top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 35px 0;
+  font-size: 30px;
+}
+.rightbar .top .message {
+  font-weight: 500;
+  font-size: 18px;
+  background-color: #ffd7de;
+  padding: 15px;
+  margin: 0px 15px;
+  border-radius: 5px;
+}
+.rightbar .top .message span {
+  margin-left: 5px;
+}
+.rightbar .middle img {
+  width: 100%;
+  margin: 20px 0;
+}
+.rightbar .middle .air-datepicker {
+  width: 100%;
+  height: 270px;
+  font-size: 20px;
+}
+
+.rightbar .bottom .contact {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid #d8d8d8;
+  padding: 15px 30px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightbar .bottom .contact img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

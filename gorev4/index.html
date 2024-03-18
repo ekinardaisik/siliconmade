@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetim Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.0/air-datepicker.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" class="top">
+                <i class="fa-solid fa-eye"></i>
+            </a>
+            <div class="middle">
+                <a href="#" class="link">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="fa-solid fa-calendar"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="fa-solid fa-sliders"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="fa-regular fa-comments"></i>
+                </a>
+            </div>
+            <div class="bottom">
+                <a href="#" class="link">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="top">
+                <div class="bars">
+                    <i class="fa-solid fa-table-list"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <a href="#" class="button">
+                    <span>Last 15 Days</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </a>
+            </div>
+            <div class="middle">
+                <a href="#" class="social">
+                    <i class="icon fa-brands fa-twitter"></i>
+                    <div class="info">
+                        <span>280k</span>
+                        Followers
+                    </div>
+                    <div class="social-menu">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </a>
+                <a href="#" class="social active">
+                    <i class="icon fa-brands fa-instagram"></i>
+                    <div class="info">
+                        <span>680k</span>
+                        Followers
+                    </div>
+                    <div class="social-menu">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </a>
+                <a href="#" class="social">
+                    <i class="icon fa-brands fa-youtube"></i>
+                    <div class="info">
+                        <span>2.3M</span>
+                        Followers
+                    </div>
+                    <div class="social-menu">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </a>
+                <a href="#" class="social">
+                    <i class="icon fa-brands fa-facebook-f"></i>
+                    <div class="info">
+                        <span>50k</span>
+                        Followers
+                    </div>
+                    <div class="social-menu">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="graph">
+                <div class="title">
+                    Instagram Subscribers
+                    <div class="info">
+                        <div class="gained">
+                            <i></i>
+                            <span>Gained</span>
+                        </div>
+                        <div class="lost">
+                            <i></i>
+                            <span>Lost</span>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="myChart" style="width:100%;height: 170px;"></canvas>
+            </div>
+            <div class="bottom">
+                <div class="metrics">
+                    <div class="title">Key Metrics</div>
+                    <div class="data">
+                        <div class="line">
+                            <span>Clicks</span>
+                            <span>10k</span>
+                        </div>
+                        <div class="line">
+                            <span>Likes</span>
+                            <span>680</span>
+                        </div>
+                        <div class="line">
+                            <span>Followers</span>
+                            <span>8k</span>
+                        </div>
+                        <div class="line">
+                            <span>Impressions</span>
+                            <span>5500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="statistics">
+                    <div class="title">Engaged Users</div>
+                    <div class="value">12.2k</div>
+                    <span>
+                        <i class="fa-solid fa-angles-up"></i>
+                        19%
+                    </span>
+                </div>
+                <div class="statistics">
+                    <div class="title">Page Impressions</div>
+                    <div class="value">8.6k</div>
+                    <span>
+                        <i class="fa-solid fa-angles-down"></i>
+                        9%
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="rightbar">
+            <div class="top">
+                <a href="#" class="fa-regular fa-bell"></a>
+                <a href="#" class="message">
+                    <i class="fa-solid fa-gift"></i>
+                    <span>2 New Updates</span>
+                </a>
+                <a href="#" class="fa-regular fa-user"></a>
+            </div>
+            <div class="middle">
+                <img src="date-image.png" alt="">
+                <div id="datePicker"></div>
+            </div>
+            <div class="bottom">
+                <div class="contact">
+                    <span> 🤘 Say hi to <b>Laith Hart</b></span>
+                    <img src="user-2.png" alt="">
+                </div>
+                <div class="contact">
+                    <span> 🤘 Say hi to <b>Sidney Dyer</b></span>
+                    <img src="user.png" alt="">
+                </div>
+            </div>
+        </div>
+        <script src="air-datepicker/air-datepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="index.js"></script>
+
+</body>
+
+</html>
